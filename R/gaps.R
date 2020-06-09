@@ -10,10 +10,11 @@ globalVariables(c(".", ".gaps"))
 #' existing `NA` untouched.
 #' * empty: filled with default `NA`.
 #' * filled by values or functions.
-#' @param .full `FALSE` inserts `NA` for each keyed unit within its own period. `TRUE`
-#' fills `NA` over the entire time span of the data (a.k.a. fully balanced panel).
-#' Other options are `start()` and `end()`, suggesting to pad `NA` for the same
-#' `min(<index>)` or `max(<index>)` alignment time across the units.
+#' @param .full
+#' * `FALSE` inserts `NA` for each keyed unit within its own period.
+#' * `TRUE` fills `NA` over the entire time span of the data (a.k.a. fully balanced panel).
+#' * `start()` pad `NA` to the same starting point (i.e. `min(<index>)`) across units.
+#' * `end()` pad `NA` to the same ending point (i.e. `max(<index>)`) across units.
 #'
 #' @family implicit gaps handling
 #' @seealso [tidyr::fill], [tidyr::replace_na] for handling missing values `NA`.
@@ -63,7 +64,7 @@ globalVariables(c(".", ".gaps"))
 #' # use fill() to fill `NA` by previous/next entry
 #' pedestrian %>%
 #'   group_by_key() %>%
-#'   fill_gaps() %>% 
+#'   fill_gaps() %>%
 #'   tidyr::fill(Count, .direction = "down")
 fill_gaps <- function(.data, ..., .full = FALSE) {
   UseMethod("fill_gaps")
@@ -85,7 +86,7 @@ fill_gaps.tbl_ts <- function(.data, ..., .full = FALSE) {
 
   if (!is_empty(lst_exprs)) { # any replacement
     # error handling
-    vars_select(measured_vars(.data), !!!names(lst_exprs))
+    eval_select(names(lst_exprs), .data)
     replaced_df <- ungroup(summarise(as_tibble(.data), !!!lst_exprs))
     by_name <- intersect(names(gap_data), names(replaced_df))
     if (is_empty(by_name)) { # by value
@@ -95,7 +96,8 @@ fill_gaps.tbl_ts <- function(.data, ..., .full = FALSE) {
     }
   }
   grps <- groups(.data)
-  full_data <- group_by(vec_rbind(as_tibble(gap_data), .data), !!!grps)
+  full_data <- group_by(vec_rbind(as_tibble(gap_data), as_tibble(.data)),
+    !!!grps)
   full_data <- full_data[names(.data)] # keep the original order
   update_meta(full_data, .data, ordered = NULL, interval = interval(.data))
 }
@@ -131,14 +133,14 @@ scan_gaps.tbl_ts <- function(.data, .full = FALSE) {
     sum_data <- summarise(keyed_tbl,
       !!idx_chr := list2(tibble(!!idx_chr := seq_generator(!!idx, int)))
     )
-  } else if (.full == sym("start()")) {
+  } else if (.full == expr("start()")) {
     start <- min(keyed_tbl[[idx_chr]])
     sum_data <- summarise(keyed_tbl,
       !!idx_chr := list2(tibble(
         !!idx_chr := seq_generator(c(start, max(!!idx)), int)
       ))
     )
-  } else if (.full == sym("end()")) {
+  } else if (.full == expr("end()")) {
     end <- max(keyed_tbl[[idx_chr]])
     sum_data <- summarise(keyed_tbl,
       !!idx_chr := list2(tibble(

@@ -2,11 +2,11 @@
 
 <details>
 
-* Version: 0.1.0
+* Version: 0.2.0
 * Source code: https://github.com/cran/fable
-* URL: https://fable.tidyverts.org
+* URL: https://fable.tidyverts.org, https://github.com/tidyverts/fable
 * BugReports: https://github.com/tidyverts/fable/issues
-* Date/Publication: 2019-09-23 15:10:06 UTC
+* Date/Publication: 2020-04-22 13:12:08 UTC
 * Number of recursive dependencies: 99
 
 Run `revdep_details(,"fable")` for more info
@@ -30,32 +30,32 @@ Run `revdep_details(,"fable")` for more info
 ** package ‘fable’ successfully unpacked and MD5 sums checked
 ** using staged installation
 ** libs
-clang++ -std=gnu++11 -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG  -I"/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include" -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include  -fPIC  -Wall -g -O2  -c etsTargetFunction.cpp -o etsTargetFunction.o
+clang++ -mmacosx-version-min=10.13 -std=gnu++11 -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG  -I'/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include' -I/usr/local/include   -fPIC  -Wall -g -O2  -c etsTargetFunction.cpp -o etsTargetFunction.o
 In file included from etsTargetFunction.cpp:3:
 In file included from /Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include/Rcpp.h:27:
 In file included from /Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include/RcppCommon.h:128:
-/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include/Rcpp/exceptions.h:109:53: warning: all paths through this function will call itself [-Winfinite-recursion]
+/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include/Rcpp/exceptions.h:112:53: warning: all paths through this function will call itself [-Winfinite-recursion]
     inline void warning(const std::string& message) {        // #nocov start
                                                     ^
 1 warning generated.
-clang++ -std=gnu++11 -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG  -I"/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include" -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include  -fPIC  -Wall -g -O2  -c etsTargetFunctionWrapper.cpp -o etsTargetFunctionWrapper.o
+clang++ -mmacosx-version-min=10.13 -std=gnu++11 -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG  -I'/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include' -I/usr/local/include   -fPIC  -Wall -g -O2  -c etsTargetFunctionWrapper.cpp -o etsTargetFunctionWrapper.o
 In file included from etsTargetFunctionWrapper.cpp:10:
 In file included from /Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include/Rcpp.h:27:
 In file included from /Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include/RcppCommon.h:128:
-/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include/Rcpp/exceptions.h:109:53: warning: all paths through this function will call itself [-Winfinite-recursion]
+/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include/Rcpp/exceptions.h:112:53: warning: all paths through this function will call itself [-Winfinite-recursion]
     inline void warning(const std::string& message) {        // #nocov start
                                                     ^
 1 warning generated.
-clang -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG  -I"/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include" -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include  -fPIC  -Wall -g -O2  -c etscalc.c -o etscalc.o
-clang -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG  -I"/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include" -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include  -fPIC  -Wall -g -O2  -c registerDynamicSymbol.c -o registerDynamicSymbol.o
-clang++ -std=gnu++11 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -single_module -multiply_defined suppress -L/Library/Frameworks/R.framework/Resources/lib -L/usr/local/lib -o fable.so etsTargetFunction.o etsTargetFunctionWrapper.o etscalc.o registerDynamicSymbol.o -L/Library/Frameworks/R.framework/Resources/lib -lRlapack -L/Library/Frameworks/R.framework/Resources/lib -lRblas -L/usr/local/gfortran/lib/gcc/x86_64-apple-darwin15/6.1.0 -L/usr/local/gfortran/lib -lgfortran -lquadmath -lm -F/Library/Frameworks/R.framework/.. -framework R -Wl,-framework -Wl,CoreFoundation
-ld: warning: directory not found for option '-L/usr/local/gfortran/lib/gcc/x86_64-apple-darwin15/6.1.0'
+clang -mmacosx-version-min=10.13 -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG  -I'/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include' -I/usr/local/include   -fPIC  -Wall -g -O2  -c etscalc.c -o etscalc.o
+clang -mmacosx-version-min=10.13 -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG  -I'/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include' -I/usr/local/include   -fPIC  -Wall -g -O2  -c registerDynamicSymbol.c -o registerDynamicSymbol.o
+clang++ -mmacosx-version-min=10.13 -std=gnu++11 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -single_module -multiply_defined suppress -L/Library/Frameworks/R.framework/Resources/lib -L/usr/local/lib -o fable.so etsTargetFunction.o etsTargetFunctionWrapper.o etscalc.o registerDynamicSymbol.o -L/Library/Frameworks/R.framework/Resources/lib -lRlapack -L/Library/Frameworks/R.framework/Resources/lib -lRblas -L/usr/local/gfortran/lib/gcc/x86_64-apple-darwin18/8.2.0 -L/usr/local/gfortran/lib -lgfortran -lquadmath -lm -F/Library/Frameworks/R.framework/.. -framework R -Wl,-framework -Wl,CoreFoundation
+ld: warning: directory not found for option '-L/usr/local/gfortran/lib/gcc/x86_64-apple-darwin18/8.2.0'
 installing to /Users/earo/Rpkg/tsibble/revdep/checks.noindex/fable/new/fable.Rcheck/00LOCK-fable/00new/fable/libs
 ** R
 ** inst
 ** byte-compile and prepare package for lazy loading
-Error: package or namespace load failed for ‘fabletools’ in loadNamespace(i, c(lib.loc, .libPaths()), versionCheck = vI[[i]]):
- namespace ‘vctrs’ 0.2.0 is being loaded, but >= 0.2.0.9007 is required
+Error: package or namespace load failed for ‘fabletools’ in loadNamespace(j <- i[[1L]], c(lib.loc, .libPaths()), versionCheck = vI[[j]]):
+ namespace ‘dplyr’ 0.8.5 is being loaded, but >= 0.8.99 is required
 Error: package ‘fabletools’ could not be loaded
 Execution halted
 ERROR: lazy loading failed for package ‘fable’
@@ -69,26 +69,26 @@ ERROR: lazy loading failed for package ‘fable’
 ** package ‘fable’ successfully unpacked and MD5 sums checked
 ** using staged installation
 ** libs
-clang++ -std=gnu++11 -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG  -I"/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include" -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include  -fPIC  -Wall -g -O2  -c etsTargetFunction.cpp -o etsTargetFunction.o
+clang++ -mmacosx-version-min=10.13 -std=gnu++11 -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG  -I'/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include' -I/usr/local/include   -fPIC  -Wall -g -O2  -c etsTargetFunction.cpp -o etsTargetFunction.o
 In file included from etsTargetFunction.cpp:3:
 In file included from /Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include/Rcpp.h:27:
 In file included from /Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include/RcppCommon.h:128:
-/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include/Rcpp/exceptions.h:109:53: warning: all paths through this function will call itself [-Winfinite-recursion]
+/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include/Rcpp/exceptions.h:112:53: warning: all paths through this function will call itself [-Winfinite-recursion]
     inline void warning(const std::string& message) {        // #nocov start
                                                     ^
 1 warning generated.
-clang++ -std=gnu++11 -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG  -I"/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include" -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include  -fPIC  -Wall -g -O2  -c etsTargetFunctionWrapper.cpp -o etsTargetFunctionWrapper.o
+clang++ -mmacosx-version-min=10.13 -std=gnu++11 -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG  -I'/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include' -I/usr/local/include   -fPIC  -Wall -g -O2  -c etsTargetFunctionWrapper.cpp -o etsTargetFunctionWrapper.o
 In file included from etsTargetFunctionWrapper.cpp:10:
 In file included from /Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include/Rcpp.h:27:
 In file included from /Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include/RcppCommon.h:128:
-/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include/Rcpp/exceptions.h:109:53: warning: all paths through this function will call itself [-Winfinite-recursion]
+/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include/Rcpp/exceptions.h:112:53: warning: all paths through this function will call itself [-Winfinite-recursion]
     inline void warning(const std::string& message) {        // #nocov start
                                                     ^
 1 warning generated.
-clang -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG  -I"/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include" -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include  -fPIC  -Wall -g -O2  -c etscalc.c -o etscalc.o
-clang -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG  -I"/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include" -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include  -fPIC  -Wall -g -O2  -c registerDynamicSymbol.c -o registerDynamicSymbol.o
-clang++ -std=gnu++11 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -single_module -multiply_defined suppress -L/Library/Frameworks/R.framework/Resources/lib -L/usr/local/lib -o fable.so etsTargetFunction.o etsTargetFunctionWrapper.o etscalc.o registerDynamicSymbol.o -L/Library/Frameworks/R.framework/Resources/lib -lRlapack -L/Library/Frameworks/R.framework/Resources/lib -lRblas -L/usr/local/gfortran/lib/gcc/x86_64-apple-darwin15/6.1.0 -L/usr/local/gfortran/lib -lgfortran -lquadmath -lm -F/Library/Frameworks/R.framework/.. -framework R -Wl,-framework -Wl,CoreFoundation
-ld: warning: directory not found for option '-L/usr/local/gfortran/lib/gcc/x86_64-apple-darwin15/6.1.0'
+clang -mmacosx-version-min=10.13 -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG  -I'/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include' -I/usr/local/include   -fPIC  -Wall -g -O2  -c etscalc.c -o etscalc.o
+clang -mmacosx-version-min=10.13 -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG  -I'/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include' -I/usr/local/include   -fPIC  -Wall -g -O2  -c registerDynamicSymbol.c -o registerDynamicSymbol.o
+clang++ -mmacosx-version-min=10.13 -std=gnu++11 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -single_module -multiply_defined suppress -L/Library/Frameworks/R.framework/Resources/lib -L/usr/local/lib -o fable.so etsTargetFunction.o etsTargetFunctionWrapper.o etscalc.o registerDynamicSymbol.o -L/Library/Frameworks/R.framework/Resources/lib -lRlapack -L/Library/Frameworks/R.framework/Resources/lib -lRblas -L/usr/local/gfortran/lib/gcc/x86_64-apple-darwin18/8.2.0 -L/usr/local/gfortran/lib -lgfortran -lquadmath -lm -F/Library/Frameworks/R.framework/.. -framework R -Wl,-framework -Wl,CoreFoundation
+ld: warning: directory not found for option '-L/usr/local/gfortran/lib/gcc/x86_64-apple-darwin18/8.2.0'
 installing to /Users/earo/Rpkg/tsibble/revdep/checks.noindex/fable/old/fable.Rcheck/00LOCK-fable/00new/fable/libs
 ** R
 ** inst
@@ -109,11 +109,11 @@ installing to /Users/earo/Rpkg/tsibble/revdep/checks.noindex/fable/old/fable.Rch
 
 <details>
 
-* Version: 0.1.1
+* Version: 0.1.3
 * Source code: https://github.com/cran/fabletools
-* URL: http://fabletools.tidyverts.org/
+* URL: http://fabletools.tidyverts.org/, https://github.com/tidyverts/fabletools
 * BugReports: https://github.com/tidyverts/fabletools/issues
-* Date/Publication: 2019-09-16 10:50:02 UTC
+* Date/Publication: 2020-03-24 07:10:02 UTC
 * Number of recursive dependencies: 92
 
 Run `revdep_details(,"fabletools")` for more info
@@ -139,9 +139,9 @@ Run `revdep_details(,"fabletools")` for more info
 ** R
 ** inst
 ** byte-compile and prepare package for lazy loading
-Error in loadNamespace(i, c(lib.loc, .libPaths()), versionCheck = vI[[i]]) : 
-  namespace ‘vctrs’ 0.2.0 is being loaded, but >= 0.2.0.9007 is required
-Calls: <Anonymous> ... namespaceImport -> loadNamespace -> namespaceImport -> loadNamespace
+Error in loadNamespace(j <- i[[1L]], c(lib.loc, .libPaths()), versionCheck = vI[[j]]) : 
+  namespace ‘dplyr’ 0.8.5 is being loaded, but >= 0.8.99 is required
+Calls: <Anonymous> ... namespaceImportFrom -> asNamespace -> loadNamespace
 Execution halted
 ERROR: lazy loading failed for package ‘fabletools’
 * removing ‘/Users/earo/Rpkg/tsibble/revdep/checks.noindex/fabletools/new/fabletools.Rcheck/fabletools’
@@ -170,12 +170,12 @@ ERROR: lazy loading failed for package ‘fabletools’
 
 <details>
 
-* Version: 0.1.1
+* Version: 0.1.3
 * Source code: https://github.com/cran/feasts
-* URL: http://feasts.tidyverts.org/
+* URL: http://feasts.tidyverts.org/, https://github.com/tidyverts/feasts/
 * BugReports: https://github.com/tidyverts/feasts/issues
-* Date/Publication: 2019-09-02 14:10:06 UTC
-* Number of recursive dependencies: 90
+* Date/Publication: 2020-03-18 07:00:11 UTC
+* Number of recursive dependencies: 92
 
 Run `revdep_details(,"feasts")` for more info
 
@@ -200,8 +200,8 @@ Run `revdep_details(,"feasts")` for more info
 ** R
 ** inst
 ** byte-compile and prepare package for lazy loading
-Error: package or namespace load failed for ‘fabletools’ in loadNamespace(i, c(lib.loc, .libPaths()), versionCheck = vI[[i]]):
- namespace ‘vctrs’ 0.2.0 is being loaded, but >= 0.2.0.9007 is required
+Error: package or namespace load failed for ‘fabletools’ in loadNamespace(j <- i[[1L]], c(lib.loc, .libPaths()), versionCheck = vI[[j]]):
+ namespace ‘dplyr’ 0.8.5 is being loaded, but >= 0.8.99 is required
 Error: package ‘fabletools’ could not be loaded
 Execution halted
 ERROR: lazy loading failed for package ‘feasts’
@@ -232,12 +232,12 @@ ERROR: lazy loading failed for package ‘feasts’
 
 <details>
 
-* Version: 0.1
+* Version: 0.2
 * Source code: https://github.com/cran/fpp3
 * URL: https://github.com/robjhyndman/fpp3-package, https://OTexts.org/fpp3/
 * BugReports: https://github.com/robjhyndman/fpp3-package
-* Date/Publication: 2019-10-09 15:00:05 UTC
-* Number of recursive dependencies: 54
+* Date/Publication: 2020-03-15 05:30:03 UTC
+* Number of recursive dependencies: 63
 
 Run `revdep_details(,"fpp3")` for more info
 
@@ -280,8 +280,8 @@ Run `revdep_details(,"fpp3")` for more info
 Error: package or namespace load failed for ‘fpp3’:
  .onAttach failed in attachNamespace() for 'fpp3', details:
   call: NULL
-  error: package or namespace load failed for ‘tsibble’ in loadNamespace(i, c(lib.loc, .libPaths()), versionCheck = vI[[i]]):
- namespace ‘vctrs’ 0.2.0 is already loaded, but >= 0.2.0.9007 is required
+  error: package or namespace load failed for ‘tsibble’ in loadNamespace(j <- i[[1L]], c(lib.loc, .libPaths()), versionCheck = vI[[j]]):
+ namespace ‘dplyr’ 0.8.5 is already loaded, but >= 0.8.99 is required
 Error: loading failed
 Execution halted
 ERROR: loading failed

@@ -17,10 +17,6 @@
 #' # a monthly series
 #' x1 <- as_tsibble(AirPassengers)
 #' as.ts(x1)
-#'
-#' # equally spaced over trading days, not smart enough to guess frequency
-#' x2 <- as_tsibble(EuStockMarkets)
-#' head(as.ts(x2, frequency = 260))
 as.ts.tbl_ts <- function(x, value, frequency = NULL, fill = NA_real_, ...) {
   stopifnot(!is_null(fill))
   value <- enquo(value)
@@ -42,10 +38,10 @@ as.ts.tbl_ts <- function(x, value, frequency = NULL, fill = NA_real_, ...) {
     }
   }
   idx <- index(x)
-  vars_fill <- vec_repeat(fill, length(value_var))
+  vars_fill <- vec_rep(fill, length(value_var))
   vars_fill <- set_names(vars_fill, nm = value_var)
   tsbl_sel <- fill_gaps(
-    select_tsibble(x, !!idx, !!!key_vars, !!value_var),
+    select(x, !!idx, !!!key_vars, !!value_var),
     !!!vars_fill, .full = TRUE)
   pivot_wider_ts(tsbl_sel, frequency = frequency)
 }

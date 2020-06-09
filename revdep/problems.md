@@ -2,11 +2,11 @@
 
 <details>
 
-* Version: 0.1.0
+* Version: 0.2.0
 * Source code: https://github.com/cran/fable
-* URL: https://fable.tidyverts.org
+* URL: https://fable.tidyverts.org, https://github.com/tidyverts/fable
 * BugReports: https://github.com/tidyverts/fable/issues
-* Date/Publication: 2019-09-23 15:10:06 UTC
+* Date/Publication: 2020-04-22 13:12:08 UTC
 * Number of recursive dependencies: 99
 
 Run `revdep_details(,"fable")` for more info
@@ -30,32 +30,32 @@ Run `revdep_details(,"fable")` for more info
 ** package ‘fable’ successfully unpacked and MD5 sums checked
 ** using staged installation
 ** libs
-clang++ -std=gnu++11 -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG  -I"/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include" -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include  -fPIC  -Wall -g -O2  -c etsTargetFunction.cpp -o etsTargetFunction.o
+clang++ -mmacosx-version-min=10.13 -std=gnu++11 -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG  -I'/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include' -I/usr/local/include   -fPIC  -Wall -g -O2  -c etsTargetFunction.cpp -o etsTargetFunction.o
 In file included from etsTargetFunction.cpp:3:
 In file included from /Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include/Rcpp.h:27:
 In file included from /Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include/RcppCommon.h:128:
-/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include/Rcpp/exceptions.h:109:53: warning: all paths through this function will call itself [-Winfinite-recursion]
+/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include/Rcpp/exceptions.h:112:53: warning: all paths through this function will call itself [-Winfinite-recursion]
     inline void warning(const std::string& message) {        // #nocov start
                                                     ^
 1 warning generated.
-clang++ -std=gnu++11 -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG  -I"/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include" -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include  -fPIC  -Wall -g -O2  -c etsTargetFunctionWrapper.cpp -o etsTargetFunctionWrapper.o
+clang++ -mmacosx-version-min=10.13 -std=gnu++11 -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG  -I'/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include' -I/usr/local/include   -fPIC  -Wall -g -O2  -c etsTargetFunctionWrapper.cpp -o etsTargetFunctionWrapper.o
 In file included from etsTargetFunctionWrapper.cpp:10:
 In file included from /Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include/Rcpp.h:27:
 In file included from /Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include/RcppCommon.h:128:
-/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include/Rcpp/exceptions.h:109:53: warning: all paths through this function will call itself [-Winfinite-recursion]
+/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include/Rcpp/exceptions.h:112:53: warning: all paths through this function will call itself [-Winfinite-recursion]
     inline void warning(const std::string& message) {        // #nocov start
                                                     ^
 1 warning generated.
-clang -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG  -I"/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include" -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include  -fPIC  -Wall -g -O2  -c etscalc.c -o etscalc.o
-clang -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG  -I"/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include" -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include  -fPIC  -Wall -g -O2  -c registerDynamicSymbol.c -o registerDynamicSymbol.o
-clang++ -std=gnu++11 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -single_module -multiply_defined suppress -L/Library/Frameworks/R.framework/Resources/lib -L/usr/local/lib -o fable.so etsTargetFunction.o etsTargetFunctionWrapper.o etscalc.o registerDynamicSymbol.o -L/Library/Frameworks/R.framework/Resources/lib -lRlapack -L/Library/Frameworks/R.framework/Resources/lib -lRblas -L/usr/local/gfortran/lib/gcc/x86_64-apple-darwin15/6.1.0 -L/usr/local/gfortran/lib -lgfortran -lquadmath -lm -F/Library/Frameworks/R.framework/.. -framework R -Wl,-framework -Wl,CoreFoundation
-ld: warning: directory not found for option '-L/usr/local/gfortran/lib/gcc/x86_64-apple-darwin15/6.1.0'
+clang -mmacosx-version-min=10.13 -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG  -I'/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include' -I/usr/local/include   -fPIC  -Wall -g -O2  -c etscalc.c -o etscalc.o
+clang -mmacosx-version-min=10.13 -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG  -I'/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include' -I/usr/local/include   -fPIC  -Wall -g -O2  -c registerDynamicSymbol.c -o registerDynamicSymbol.o
+clang++ -mmacosx-version-min=10.13 -std=gnu++11 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -single_module -multiply_defined suppress -L/Library/Frameworks/R.framework/Resources/lib -L/usr/local/lib -o fable.so etsTargetFunction.o etsTargetFunctionWrapper.o etscalc.o registerDynamicSymbol.o -L/Library/Frameworks/R.framework/Resources/lib -lRlapack -L/Library/Frameworks/R.framework/Resources/lib -lRblas -L/usr/local/gfortran/lib/gcc/x86_64-apple-darwin18/8.2.0 -L/usr/local/gfortran/lib -lgfortran -lquadmath -lm -F/Library/Frameworks/R.framework/.. -framework R -Wl,-framework -Wl,CoreFoundation
+ld: warning: directory not found for option '-L/usr/local/gfortran/lib/gcc/x86_64-apple-darwin18/8.2.0'
 installing to /Users/earo/Rpkg/tsibble/revdep/checks.noindex/fable/new/fable.Rcheck/00LOCK-fable/00new/fable/libs
 ** R
 ** inst
 ** byte-compile and prepare package for lazy loading
-Error: package or namespace load failed for ‘fabletools’ in loadNamespace(i, c(lib.loc, .libPaths()), versionCheck = vI[[i]]):
- namespace ‘vctrs’ 0.2.0 is being loaded, but >= 0.2.0.9007 is required
+Error: package or namespace load failed for ‘fabletools’ in loadNamespace(j <- i[[1L]], c(lib.loc, .libPaths()), versionCheck = vI[[j]]):
+ namespace ‘dplyr’ 0.8.5 is being loaded, but >= 0.8.99 is required
 Error: package ‘fabletools’ could not be loaded
 Execution halted
 ERROR: lazy loading failed for package ‘fable’
@@ -69,26 +69,26 @@ ERROR: lazy loading failed for package ‘fable’
 ** package ‘fable’ successfully unpacked and MD5 sums checked
 ** using staged installation
 ** libs
-clang++ -std=gnu++11 -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG  -I"/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include" -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include  -fPIC  -Wall -g -O2  -c etsTargetFunction.cpp -o etsTargetFunction.o
+clang++ -mmacosx-version-min=10.13 -std=gnu++11 -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG  -I'/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include' -I/usr/local/include   -fPIC  -Wall -g -O2  -c etsTargetFunction.cpp -o etsTargetFunction.o
 In file included from etsTargetFunction.cpp:3:
 In file included from /Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include/Rcpp.h:27:
 In file included from /Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include/RcppCommon.h:128:
-/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include/Rcpp/exceptions.h:109:53: warning: all paths through this function will call itself [-Winfinite-recursion]
+/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include/Rcpp/exceptions.h:112:53: warning: all paths through this function will call itself [-Winfinite-recursion]
     inline void warning(const std::string& message) {        // #nocov start
                                                     ^
 1 warning generated.
-clang++ -std=gnu++11 -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG  -I"/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include" -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include  -fPIC  -Wall -g -O2  -c etsTargetFunctionWrapper.cpp -o etsTargetFunctionWrapper.o
+clang++ -mmacosx-version-min=10.13 -std=gnu++11 -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG  -I'/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include' -I/usr/local/include   -fPIC  -Wall -g -O2  -c etsTargetFunctionWrapper.cpp -o etsTargetFunctionWrapper.o
 In file included from etsTargetFunctionWrapper.cpp:10:
 In file included from /Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include/Rcpp.h:27:
 In file included from /Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include/RcppCommon.h:128:
-/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include/Rcpp/exceptions.h:109:53: warning: all paths through this function will call itself [-Winfinite-recursion]
+/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include/Rcpp/exceptions.h:112:53: warning: all paths through this function will call itself [-Winfinite-recursion]
     inline void warning(const std::string& message) {        // #nocov start
                                                     ^
 1 warning generated.
-clang -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG  -I"/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include" -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include  -fPIC  -Wall -g -O2  -c etscalc.c -o etscalc.o
-clang -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG  -I"/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include" -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include  -fPIC  -Wall -g -O2  -c registerDynamicSymbol.c -o registerDynamicSymbol.o
-clang++ -std=gnu++11 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -single_module -multiply_defined suppress -L/Library/Frameworks/R.framework/Resources/lib -L/usr/local/lib -o fable.so etsTargetFunction.o etsTargetFunctionWrapper.o etscalc.o registerDynamicSymbol.o -L/Library/Frameworks/R.framework/Resources/lib -lRlapack -L/Library/Frameworks/R.framework/Resources/lib -lRblas -L/usr/local/gfortran/lib/gcc/x86_64-apple-darwin15/6.1.0 -L/usr/local/gfortran/lib -lgfortran -lquadmath -lm -F/Library/Frameworks/R.framework/.. -framework R -Wl,-framework -Wl,CoreFoundation
-ld: warning: directory not found for option '-L/usr/local/gfortran/lib/gcc/x86_64-apple-darwin15/6.1.0'
+clang -mmacosx-version-min=10.13 -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG  -I'/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include' -I/usr/local/include   -fPIC  -Wall -g -O2  -c etscalc.c -o etscalc.o
+clang -mmacosx-version-min=10.13 -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG  -I'/Users/earo/Rpkg/tsibble/revdep/library.noindex/fable/Rcpp/include' -I/usr/local/include   -fPIC  -Wall -g -O2  -c registerDynamicSymbol.c -o registerDynamicSymbol.o
+clang++ -mmacosx-version-min=10.13 -std=gnu++11 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -single_module -multiply_defined suppress -L/Library/Frameworks/R.framework/Resources/lib -L/usr/local/lib -o fable.so etsTargetFunction.o etsTargetFunctionWrapper.o etscalc.o registerDynamicSymbol.o -L/Library/Frameworks/R.framework/Resources/lib -lRlapack -L/Library/Frameworks/R.framework/Resources/lib -lRblas -L/usr/local/gfortran/lib/gcc/x86_64-apple-darwin18/8.2.0 -L/usr/local/gfortran/lib -lgfortran -lquadmath -lm -F/Library/Frameworks/R.framework/.. -framework R -Wl,-framework -Wl,CoreFoundation
+ld: warning: directory not found for option '-L/usr/local/gfortran/lib/gcc/x86_64-apple-darwin18/8.2.0'
 installing to /Users/earo/Rpkg/tsibble/revdep/checks.noindex/fable/old/fable.Rcheck/00LOCK-fable/00new/fable/libs
 ** R
 ** inst
@@ -109,11 +109,11 @@ installing to /Users/earo/Rpkg/tsibble/revdep/checks.noindex/fable/old/fable.Rch
 
 <details>
 
-* Version: 0.1.1
+* Version: 0.1.3
 * Source code: https://github.com/cran/fabletools
-* URL: http://fabletools.tidyverts.org/
+* URL: http://fabletools.tidyverts.org/, https://github.com/tidyverts/fabletools
 * BugReports: https://github.com/tidyverts/fabletools/issues
-* Date/Publication: 2019-09-16 10:50:02 UTC
+* Date/Publication: 2020-03-24 07:10:02 UTC
 * Number of recursive dependencies: 92
 
 Run `revdep_details(,"fabletools")` for more info
@@ -139,9 +139,9 @@ Run `revdep_details(,"fabletools")` for more info
 ** R
 ** inst
 ** byte-compile and prepare package for lazy loading
-Error in loadNamespace(i, c(lib.loc, .libPaths()), versionCheck = vI[[i]]) : 
-  namespace ‘vctrs’ 0.2.0 is being loaded, but >= 0.2.0.9007 is required
-Calls: <Anonymous> ... namespaceImport -> loadNamespace -> namespaceImport -> loadNamespace
+Error in loadNamespace(j <- i[[1L]], c(lib.loc, .libPaths()), versionCheck = vI[[j]]) : 
+  namespace ‘dplyr’ 0.8.5 is being loaded, but >= 0.8.99 is required
+Calls: <Anonymous> ... namespaceImportFrom -> asNamespace -> loadNamespace
 Execution halted
 ERROR: lazy loading failed for package ‘fabletools’
 * removing ‘/Users/earo/Rpkg/tsibble/revdep/checks.noindex/fabletools/new/fabletools.Rcheck/fabletools’
@@ -170,12 +170,12 @@ ERROR: lazy loading failed for package ‘fabletools’
 
 <details>
 
-* Version: 0.1.1
+* Version: 0.1.3
 * Source code: https://github.com/cran/feasts
-* URL: http://feasts.tidyverts.org/
+* URL: http://feasts.tidyverts.org/, https://github.com/tidyverts/feasts/
 * BugReports: https://github.com/tidyverts/feasts/issues
-* Date/Publication: 2019-09-02 14:10:06 UTC
-* Number of recursive dependencies: 90
+* Date/Publication: 2020-03-18 07:00:11 UTC
+* Number of recursive dependencies: 92
 
 Run `revdep_details(,"feasts")` for more info
 
@@ -200,8 +200,8 @@ Run `revdep_details(,"feasts")` for more info
 ** R
 ** inst
 ** byte-compile and prepare package for lazy loading
-Error: package or namespace load failed for ‘fabletools’ in loadNamespace(i, c(lib.loc, .libPaths()), versionCheck = vI[[i]]):
- namespace ‘vctrs’ 0.2.0 is being loaded, but >= 0.2.0.9007 is required
+Error: package or namespace load failed for ‘fabletools’ in loadNamespace(j <- i[[1L]], c(lib.loc, .libPaths()), versionCheck = vI[[j]]):
+ namespace ‘dplyr’ 0.8.5 is being loaded, but >= 0.8.99 is required
 Error: package ‘fabletools’ could not be loaded
 Execution halted
 ERROR: lazy loading failed for package ‘feasts’
@@ -232,12 +232,12 @@ ERROR: lazy loading failed for package ‘feasts’
 
 <details>
 
-* Version: 0.1
+* Version: 0.2
 * Source code: https://github.com/cran/fpp3
 * URL: https://github.com/robjhyndman/fpp3-package, https://OTexts.org/fpp3/
 * BugReports: https://github.com/robjhyndman/fpp3-package
-* Date/Publication: 2019-10-09 15:00:05 UTC
-* Number of recursive dependencies: 54
+* Date/Publication: 2020-03-15 05:30:03 UTC
+* Number of recursive dependencies: 63
 
 Run `revdep_details(,"fpp3")` for more info
 
@@ -280,8 +280,8 @@ Run `revdep_details(,"fpp3")` for more info
 Error: package or namespace load failed for ‘fpp3’:
  .onAttach failed in attachNamespace() for 'fpp3', details:
   call: NULL
-  error: package or namespace load failed for ‘tsibble’ in loadNamespace(i, c(lib.loc, .libPaths()), versionCheck = vI[[i]]):
- namespace ‘vctrs’ 0.2.0 is already loaded, but >= 0.2.0.9007 is required
+  error: package or namespace load failed for ‘tsibble’ in loadNamespace(j <- i[[1L]], c(lib.loc, .libPaths()), versionCheck = vI[[j]]):
+ namespace ‘dplyr’ 0.8.5 is already loaded, but >= 0.8.99 is required
 Error: loading failed
 Execution halted
 ERROR: loading failed
@@ -311,11 +311,11 @@ ERROR: loading failed
 
 <details>
 
-* Version: 0.1.0
+* Version: 0.1.2
 * Source code: https://github.com/cran/gravitas
 * URL: https://github.com/Sayani07/gravitas/
 * BugReports: https://github.com/Sayani07/gravitas/issues
-* Date/Publication: 2019-11-05 14:30:02 UTC
+* Date/Publication: 2020-02-17 09:20:02 UTC
 * Number of recursive dependencies: 94
 
 Run `revdep_details(,"gravitas")` for more info
@@ -344,9 +344,9 @@ Run `revdep_details(,"gravitas")` for more info
     > # Search for granularities
     > smart_meter10 %>%
     +   search_gran(highest_unit = "week")
-    Error in loadNamespace(i, c(lib.loc, .libPaths()), versionCheck = vI[[i]]) : 
-      namespace ‘vctrs’ 0.2.0 is being loaded, but >= 0.2.0.9007 is required
-    Calls: %>% ... getNamespace -> loadNamespace -> namespaceImport -> loadNamespace
+    Error in loadNamespace(j <- i[[1L]], c(lib.loc, .libPaths()), versionCheck = vI[[j]]) : 
+      namespace ‘dplyr’ 0.8.5 is already loaded, but >= 0.8.99 is required
+    Calls: %>% ... namespaceImportFrom -> asNamespace -> loadNamespace
     Execution halted
     ```
 
@@ -359,7 +359,7 @@ Run `revdep_details(,"gravitas")` for more info
       [90m 4. [39mbase:::tryCatchOne(expr, names, parentenv, handlers[[1L]])
       [90m 5. [39mvalue[[3L]](cond)
       
-      ══ testthat results  ═══════════════════════════════════════
+      ══ testthat results  ═══════════════════════════════════════════════════════════
       [ OK: 73 | SKIPPED: 0 | WARNINGS: 0 | FAILED: 6 ]
       1. Error: (unknown) (@test-create_gran.R#9) 
       2. Error: (unknown) (@test-gran_advice.R#9) 
@@ -376,11 +376,11 @@ Run `revdep_details(,"gravitas")` for more info
 
 <details>
 
-* Version: 0.3.0
+* Version: 0.3.1.1
 * Source code: https://github.com/cran/pmdplyr
 * URL: https://nickch-k.github.io/pmdplyr, https://github.com/NickCH-K/pmdplyr
 * BugReports: https://github.com/NickCH-K/pmdplyr/issues
-* Date/Publication: 2019-08-26 09:50:02 UTC
+* Date/Publication: 2020-05-15 08:47:17 UTC
 * Number of recursive dependencies: 106
 
 Run `revdep_details(,"pmdplyr")` for more info
@@ -409,9 +409,9 @@ Run `revdep_details(,"pmdplyr")` for more info
     > if ("tsibble" %in% pkgs) {
     +   head(panel_convert(S_pibble, to = "tsibble"))
     + }
-    Error in loadNamespace(i, c(lib.loc, .libPaths()), versionCheck = vI[[i]]) : 
-      namespace ‘vctrs’ 0.2.0 is already loaded, but >= 0.2.0.9007 is required
-    Calls: head ... getNamespace -> loadNamespace -> namespaceImport -> loadNamespace
+    Error in loadNamespace(j <- i[[1L]], c(lib.loc, .libPaths()), versionCheck = vI[[j]]) : 
+      namespace ‘dplyr’ 0.8.5 is already loaded, but >= 0.8.99 is required
+    Calls: head ... namespaceImportFrom -> asNamespace -> loadNamespace
     Execution halted
     ```
 
@@ -426,9 +426,9 @@ Run `revdep_details(,"pmdplyr")` for more info
       [90m 3. [39mbase::asNamespace(ns)
       [90m 4. [39mbase::getNamespace(ns)
       [90m 5. [39mbase::loadNamespace(name)
-      [90m 7. [39mbase::loadNamespace(i, c(lib.loc, .libPaths()), versionCheck = vI[[i]])
+      [90m 8. [39mbase::loadNamespace(j <- i[[1L]], c(lib.loc, .libPaths()), versionCheck = vI[[j]])
       
-      ══ testthat results  ═══════════════════════════════════════
+      ══ testthat results  ═══════════════════════════════════════════════════════════
       [ OK: 290 | SKIPPED: 0 | WARNINGS: 13 | FAILED: 2 ]
       1. Error: panel_convert input failstates (@test-bad_input.R#165) 
       2. Error: (unknown) (@test-panel_convert.R#14) 
@@ -437,18 +437,17 @@ Run `revdep_details(,"pmdplyr")` for more info
       Execution halted
     ```
 
-# sugrrants
+# RTL
 
 <details>
 
-* Version: 0.2.4
-* Source code: https://github.com/cran/sugrrants
-* URL: https://pkg.earo.me/sugrrants
-* BugReports: https://github.com/earowang/sugrrants/issues
-* Date/Publication: 2019-04-06 04:40:03 UTC
-* Number of recursive dependencies: 95
+* Version: 0.1.1
+* Source code: https://github.com/cran/RTL
+* URL: https://github.com/risktoollib/RTL
+* Date/Publication: 2020-02-23 18:50:02 UTC
+* Number of recursive dependencies: 136
 
-Run `revdep_details(,"sugrrants")` for more info
+Run `revdep_details(,"RTL")` for more info
 
 </details>
 
@@ -456,44 +455,70 @@ Run `revdep_details(,"sugrrants")` for more info
 
 *   checking examples ... ERROR
     ```
-    Running examples in ‘sugrrants-Ex.R’ failed
+    Running examples in ‘RTL-Ex.R’ failed
     The error most likely occurred in:
     
-    > ### Name: frame_calendar
-    > ### Title: Rearrange a temporal data frame to a calendar-based data format
-    > ###   using linear algebra
-    > ### Aliases: frame_calendar prettify
+    > ### Name: chart_zscore
+    > ### Title: 'chart_zscore'
+    > ### Aliases: chart_zscore
     > 
     > ### ** Examples
     > 
-    > library(dplyr, warn.conflicts = FALSE)
-    > # compute the calendar layout for the data frame
-    > calendar_df <- pedestrian %>%
-    +   filter(Sensor_ID == 13, Year == 2016) %>%
-    +   frame_calendar(x = Time, y = Hourly_Counts, date = Date, nrow = 4)
-    Error in loadNamespace(i, c(lib.loc, .libPaths()), versionCheck = vI[[i]]) : 
-      namespace ‘vctrs’ 0.2.0 is being loaded, but >= 0.2.0.9007 is required
-    Calls: %>% ... getNamespace -> loadNamespace -> namespaceImport -> loadNamespace
+    > chart_zscore(df = ng_storage, title = "NG Storage Z Score",
+    + per = "yearweek", output = "stl", chart = "seasons")
+    Error in loadNamespace(j <- i[[1L]], c(lib.loc, .libPaths()), versionCheck = vI[[j]]) : 
+      namespace ‘dplyr’ 0.8.5 is already loaded, but >= 0.8.99 is required
+    Calls: chart_zscore ... namespaceImportFrom -> asNamespace -> loadNamespace
     Execution halted
     ```
+
+## In both
+
+*   checking dependencies in R code ... NOTE
+    ```
+    Namespace in Imports field not imported from: ‘quantmod’
+      All declared Imports should be used.
+    ```
+
+*   checking data for non-ASCII characters ... NOTE
+    ```
+      Note: found 15456 marked UTF-8 strings
+    ```
+
+# sugrrants
+
+<details>
+
+* Version: 0.2.7
+* Source code: https://github.com/cran/sugrrants
+* URL: https://pkg.earo.me/sugrrants
+* BugReports: https://github.com/earowang/sugrrants/issues
+* Date/Publication: 2020-04-18 05:20:03 UTC
+* Number of recursive dependencies: 89
+
+Run `revdep_details(,"sugrrants")` for more info
+
+</details>
+
+## Newly broken
 
 *   checking tests ...
     ```
      ERROR
     Running the tests in ‘tests/testthat.R’ failed.
     Last 13 lines of output:
-      ══ testthat results  ═══════════════════════════════════════
-      [ OK: 8 | SKIPPED: 0 | WARNINGS: 0 | FAILED: 15 ]
-      1. Error: Multiple y's and NA's (@test-calendar.R#11) 
-      2. Error: Variable scoping (@test-calendar.R#30) 
-      3. Failure: Some column names of data are used in the function (@test-calendar.R#38) 
-      4. Failure: Some column names of data are used in the function (@test-calendar.R#43) 
-      5. Failure: Some column names of data are used in the function (@test-calendar.R#48) 
-      6. Failure: Some column names of data are used in the function (@test-calendar.R#53) 
-      7. Error: Some column names of data are used in the function (@test-calendar.R#58) 
-      8. Error: The argument calendar (@test-calendar.R#83) 
-      9. Error: The tsibble data (@test-calendar.R#125) 
-      1. ...
+      namespace 'dplyr' 0.8.5 is already loaded, but >= 0.8.99 is required
+      [1mBacktrace:[22m
+      [90m  9. [39mtsibble::as_tsibble(., key = Sensor_Name, index = Date_Time)
+      [90m 10. [39mbase::getExportedValue(pkg, name)
+      [90m 11. [39mbase::asNamespace(ns)
+      [90m 12. [39mbase::getNamespace(ns)
+      [90m 13. [39mbase::loadNamespace(name)
+      [90m 16. [39mbase::loadNamespace(j <- i[[1L]], c(lib.loc, .libPaths()), versionCheck = vI[[j]])
+      
+      ══ testthat results  ═══════════════════════════════════════════════════════════
+      [ OK: 34 | SKIPPED: 0 | WARNINGS: 0 | FAILED: 1 ]
+      1. Error: The tsibble data (@test-calendar.R#124) 
       
       Error: testthat unit tests failed
       Execution halted
@@ -508,7 +533,7 @@ Run `revdep_details(,"sugrrants")` for more info
 * URL: http://tsibbledata.tidyverts.org/
 * BugReports: https://github.com/tidyverts/tsibbledata/issues
 * Date/Publication: 2019-06-15 07:30:03 UTC
-* Number of recursive dependencies: 47
+* Number of recursive dependencies: 55
 
 Run `revdep_details(,"tsibbledata")` for more info
 
@@ -530,8 +555,8 @@ Run `revdep_details(,"tsibbledata")` for more info
     > 
     > library(ggplot2)
     > library(tsibble)
-    Error: package or namespace load failed for ‘tsibble’ in loadNamespace(i, c(lib.loc, .libPaths()), versionCheck = vI[[i]]):
-     namespace ‘vctrs’ 0.2.0 is being loaded, but >= 0.2.0.9007 is required
+    Error: package or namespace load failed for ‘tsibble’ in loadNamespace(j <- i[[1L]], c(lib.loc, .libPaths()), versionCheck = vI[[j]]):
+     namespace ‘dplyr’ 0.8.5 is already loaded, but >= 0.8.99 is required
     Execution halted
     ```
 
@@ -546,5 +571,109 @@ Run `revdep_details(,"tsibbledata")` for more info
 *   checking data for non-ASCII characters ... NOTE
     ```
       Note: found 2 marked UTF-8 strings
+    ```
+
+# UKgrid
+
+<details>
+
+* Version: 0.1.2
+* Source code: https://github.com/cran/UKgrid
+* URL: https://github.com/RamiKrispin/UKgrid
+* BugReports: https://github.com/RamiKrispin/UKgrid/issues
+* Date/Publication: 2019-12-10 15:50:06 UTC
+* Number of recursive dependencies: 136
+
+Run `revdep_details(,"UKgrid")` for more info
+
+</details>
+
+## Newly broken
+
+*   checking examples ... ERROR
+    ```
+    Running examples in ‘UKgrid-Ex.R’ failed
+    The error most likely occurred in:
+    
+    > ### Name: extract_grid
+    > ### Title: Extracting and Aggregation of the UKgrid Dataset
+    > ### Aliases: extract_grid
+    > 
+    > ### ** Examples
+    > 
+    > df <- extract_grid(type = "tsibble", columns = "ND", start = 2017)
+    Error in loadNamespace(j <- i[[1L]], c(lib.loc, .libPaths()), versionCheck = vI[[j]]) : 
+      namespace ‘dplyr’ 0.8.5 is already loaded, but >= 0.8.99 is required
+    Calls: extract_grid ... namespaceImportFrom -> asNamespace -> loadNamespace
+    Execution halted
+    ```
+
+*   checking tests ...
+    ```
+     ERROR
+    Running the tests in ‘tests/testthat.R’ failed.
+    Last 13 lines of output:
+      [90m 2. [39mtsibble::yearmonth
+      [90m 3. [39mbase::getExportedValue(pkg, name)
+      [90m 4. [39mbase::asNamespace(ns)
+      [90m 5. [39mbase::getNamespace(ns)
+      [90m 6. [39mbase::loadNamespace(name)
+      [90m 9. [39mbase::loadNamespace(j <- i[[1L]], c(lib.loc, .libPaths()), versionCheck = vI[[j]])
+      
+      ══ testthat results  ═══════════════════════════════════════════════════════════
+      [ OK: 3 | SKIPPED: 0 | WARNINGS: 1 | FAILED: 3 ]
+      1. Error: Test basic object (@test-obj_class.R#5) 
+      2. Error: Using arguments - tsibble with hourly aggregation and two variables (@test-obj_class.R#14) 
+      3. Error: Using arguments - tsibble with monthly aggregation, pulling two variables (@test-obj_class.R#33) 
+      
+      Error: testthat unit tests failed
+      Execution halted
+    ```
+
+# USgrid
+
+<details>
+
+* Version: 0.1.0
+* Source code: https://github.com/cran/USgrid
+* URL: https://github.com/RamiKrispin/USgrid
+* BugReports: https://github.com/RamiKrispin/USgrid/issues
+* Date/Publication: 2020-01-24 17:20:06 UTC
+* Number of recursive dependencies: 104
+
+Run `revdep_details(,"USgrid")` for more info
+
+</details>
+
+## Newly broken
+
+*   checking tests ...
+    ```
+     ERROR
+    Running the tests in ‘tests/testthat.R’ failed.
+    Last 13 lines of output:
+      [90m  4. [39mtsibble::is_tsibble
+      [90m  5. [39mbase::getExportedValue(pkg, name)
+      [90m  6. [39mbase::asNamespace(ns)
+      [90m  7. [39mbase::getNamespace(ns)
+      [90m  8. [39mbase::loadNamespace(name)
+      [90m 11. [39mbase::loadNamespace(j <- i[[1L]], c(lib.loc, .libPaths()), versionCheck = vI[[j]])
+      
+      ══ testthat results  ═══════════════════════════════════════════════════════════
+      [ OK: 6 | SKIPPED: 0 | WARNINGS: 0 | FAILED: 3 ]
+      1. Error: Test US_elec dataset (@test-dataset.R#9) 
+      2. Error: Test US_source dataset (@test-dataset.R#22) 
+      3. Error: Test Cal_elec dataset (@test-dataset.R#35) 
+      
+      Error: testthat unit tests failed
+      Execution halted
+    ```
+
+## In both
+
+*   checking dependencies in R code ... NOTE
+    ```
+    Namespace in Imports field not imported from: ‘tsibble’
+      All declared Imports should be used.
     ```
 

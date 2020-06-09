@@ -5,7 +5,9 @@
 #'
 #' Create or coerce using `yearweek()`.
 #'
-#' @param x Other object.
+#' @inheritSection yearmonth Display
+#'
+#' @inheritParams yearmonth
 #'
 #' @return year-week (`yearweek`) objects.
 #'
@@ -54,12 +56,15 @@ yearweek.numeric <- function(x) {
 }
 
 #' @export
-yearweek.POSIXt <- function(x) {
+yearweek.POSIXct <- function(x) {
   new_yearweek(floor_date(as_date(x), unit = "weeks", week_start = 1))
 }
 
 #' @export
-yearweek.Date <- yearweek.POSIXt
+yearweek.POSIXlt <- yearweek.POSIXct
+
+#' @export
+yearweek.Date <- yearweek.POSIXct
 
 #' @export
 yearweek.character <- function(x) {
@@ -109,6 +114,11 @@ is.numeric.yearweek <- function(x) {
   FALSE
 }
 
+#' @export
+tz.yearweek <- function(x) {
+  "UTC"
+}
+
 # diff.yearweek <- function(x, lag = 1, differences = 1, ...) {
 #   out <- diff((as_date(x) - as_date("1969-12-29")) / 7,
 #     lag = lag, differences = differences
@@ -116,99 +126,76 @@ is.numeric.yearweek <- function(x) {
 #   structure(out, class = "difftime", units = "weeks")
 # }
 
-#' @rdname vctrs-compat
-#' @keywords internal
-#' @method vec_cast yearweek
+#' @rdname tsibble-vctrs
 #' @export
-#' @export vec_cast.yearweek
 vec_cast.yearweek <- function(x, to, ...) {
   UseMethod("vec_cast.yearweek")
 }
 
-#' @method vec_cast.Date yearweek
 #' @export
 vec_cast.Date.yearweek <- function(x, to, ...) {
   new_date(as.double(vec_data(x)))
 }
 
 #' @export
-as.Date.yearweek <- function(x, ...) {
-  new_date(as.double(vec_data(x)))
-}
-
-#' @method vec_cast.POSIXct yearweek
-#' @export
 vec_cast.POSIXct.yearweek <- function(x, to, ...) {
   as.POSIXct(new_date(x), ...)
 }
 
-#' @method vec_cast.double yearweek
 #' @export
 vec_cast.double.yearweek <- function(x, to, ...) {
   as.double((as_date(x) - as_date("1969-12-29")) / 7)
 }
 
 #' @export
-as.POSIXlt.yearweek <- function(x, tz = "", ...) {
-  as.POSIXlt(new_date(x), tz = tz, ...)
-}
-
-#' @method vec_cast.POSIXlt yearweek
-#' @export
-vec_cast.POSIXlt.yearweek <- function(x, to, ...) { # not working
+vec_cast.POSIXlt.yearweek <- function(x, to, ...) {
   as.POSIXlt(new_date(x), ...)
 }
 
-#' @method vec_cast.yearweek yearweek
 #' @export
 vec_cast.yearweek.yearweek <- function(x, to, ...) {
   new_yearweek(x)
 }
 
-#' @rdname vctrs-compat
-#' @keywords internal
-#' @method vec_ptype2 yearweek
 #' @export
-#' @export vec_ptype2.yearweek
+vec_cast.character.yearweek <- function(x, to, ...) {
+  format(x)
+}
+
+#' @rdname tsibble-vctrs
+#' @export
 vec_ptype2.yearweek <- function(x, y, ...) {
   UseMethod("vec_ptype2.yearweek", y)
 }
 
-#' @method vec_ptype2.yearweek POSIXt
 #' @export
-vec_ptype2.yearweek.POSIXt <- function(x, y, ...) {
+vec_ptype2.yearweek.POSIXct <- function(x, y, ...) {
   new_datetime()
 }
 
-#' @method vec_ptype2.POSIXt yearweek
 #' @export
-vec_ptype2.POSIXt.yearweek <- function(x, y, ...) {
+vec_ptype2.POSIXct.yearweek <- function(x, y, ...) {
   new_datetime()
 }
 
-#' @method vec_ptype2.yearweek Date
 #' @export
 vec_ptype2.yearweek.Date <- function(x, y, ...) {
   new_date()
 }
 
-#' @method vec_ptype2.yearweek yearweek
 #' @export
 vec_ptype2.yearweek.yearweek <- function(x, y, ...) {
   new_yearweek()
 }
 
-#' @method vec_ptype2.Date yearweek
 #' @export
 vec_ptype2.Date.yearweek <- function(x, y, ...) {
   new_date()
 }
 
-#' @rdname vctrs-compat
-#' @keywords internal
+#' @rdname tsibble-vctrs
 #' @method vec_arith yearweek
 #' @export
-#' @export vec_arith.yearweek
 vec_arith.yearweek <- function(op, x, y, ...) {
   UseMethod("vec_arith.yearweek", y)
 }
@@ -268,17 +255,16 @@ format.yearweek <- function(x, format = "%Y W%V", ...) {
   mth <- month(x)
   wk <- strftime(x, "%V")
   shift_year <- period(1, units = "year")
-  x[mth == 1 & wk == "53"] <- x[mth == 1 & wk == "53"] - shift_year
-  x[mth == 12 & wk == "01"] <- x[mth == 12 & wk == "01"] + shift_year
+  lgl1 <- !is.na(x) & mth == 1 & wk == "53"
+  lgl2 <- !is.na(x) & mth == 12 & wk == "01"
+  x[lgl1] <- x[lgl1] - shift_year
+  x[lgl2] <- x[lgl2] + shift_year
   wk_sub <- map_chr(wk, ~ gsub("%V", ., x = format))
+  wk_sub[is.na(wk_sub)] <- "-"
   format.Date(x, format = wk_sub)
 }
 
-#' @rdname vctrs-compat
-#' @keywords internal
-#' @method obj_print_data yearweek
 #' @export
-#' @export obj_print_data.yearweek
 obj_print_data.yearweek <- function(x, ...) {
   if (length(x) == 0) return()
   print(format(x))
@@ -321,4 +307,12 @@ is_53weeks <- function(year) {
     (year + floor(year / 4) - floor(year / 100) + floor(year / 400)) %% 7
   }
   p_year(year) == 4 | p_year(pre_year) == 3
+}
+
+#' @export
+year.yearweek <- function(x) {
+  x <- as_date(x)
+  mth <- month(x)
+  wk <- strftime(x, "%V")
+  year(x) - (mth == 1 & wk == "53") + (mth == 12 & wk == "01")
 }

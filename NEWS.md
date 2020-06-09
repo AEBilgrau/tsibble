@@ -1,25 +1,38 @@
-# tsibble 0.8.9.9000
+# tsibble 0.9.0
 
-This release marks the migration of tsibble's S3 vector classes, such as `yearquarter`, `yearmonth`, `yearweek` and `interval`, to the new **vctrs** framework. You will not receive the warning like "custom class dropped" when performing `mutate()` or `bind_rows()` later.
+This release uses the **vctrs** package internally in {tsibble}.
 
 ## Breaking changes
 
-* The "interval" class has been formally defined as a record type under the **vctrs** framework. The `new_interval()` uses new interface to create the interval and supports custom interval. This also leads to the change in the tsibble object.
-* Old tsibble objects will receive an error for "a corrupt tsibble".
+* The "interval" class has been formally defined as a record type under the **vctrs** framework. The `new_interval()` uses a new interface to create the interval and supports custom interval. Old tsibble objects will receive an error for "a corrupt tsibble".
 
 ## New features
 
-* Added `keyed_lag()`, `keyed_lead()`, and `keyed_difference()` that can be called in `mutate(<tbl_ts>)` to respect tsibble's key and gaps. This improves efficiency in computing time and memory size.
-* The `.full` argument in `*_gaps` support two more options, `start()` and `end()`, for padding to the same starting or ending time. (#147)
+* The `.full` argument in `*_gaps` supports two more options, `start()` and `end()`, for padding `NA` to either starting or ending time. (#147)
+* The argument `n` in `new_data()` and `append_row()` supports negative integer, appending past observations to the data. (#186)
+* New set of `scale_[x/y/colour/size/alpha/fill]_year*()` for custom ggplot2 scales.
+* Added `pivot_longer()` and `pivot_wider()` supporting methods for tsibble.
+* `bind_rows()` and `bind_cols()` are now possible for tsibble with dplyr v1.0.0.
+
+## Improvements
+
 * `select()` a tsibble now keeps both index and key by default. (#155)
+* Added `tidyr::drop_na()` support for tsibble. (#173)
 
 ## Bug fixes
 
 * Fixed bug in `as.ts.tbl_ts()` for ignoring implicit missings. (#160)
 
+## Deprecated functions
+
+* Deprecated window functions in favour of the {slider} package. (#143)
+* Deprecated `units_since()` in favour of `vec_cast()`.
+* Remove `is.tsibble()`.
+* Defunct `as.tsibble()`.
+
 # tsibble 0.8.6
 
-This is a maintenance release due to upcoming `tidyselect` changes.
+This is a maintenance release due to `tidyselect` v1.0.0 changes.
 
 # tsibble 0.8.5
 
